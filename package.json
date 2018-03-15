@@ -28,6 +28,7 @@
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1"
   },
+  "keywords": ["gatsby", "strava", "gatsby-plugin"],
   "lint-staged": {
     "*.{js,jsx}": ["prettier --write", "eslint --fix", "git add"],
     "*.{css,scss,json,md}": ["prettier --write", "git add"]
