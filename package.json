@@ -6,7 +6,8 @@
     "test": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
     "precommit": "lint-staged",
     "prepublishOnly": "babel src --out-dir .",
-    "release": "git checkout master && git pull && yarn test && yarn publish"
+    "release":
+      "git checkout master && git pull && yarn test && yarn publish && git push --follow-tags"
   },
   "main": "gatsby-node.js",
   "repository": "https://github.com/danoc/gatsby-source-strava-activities",
