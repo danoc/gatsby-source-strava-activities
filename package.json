@@ -1,0 +1,35 @@
+{
+  "name": "gatsby-source-strava-activities",
+  "version": "0.0.0",
+  "description": "Gatsby plugin that fetches athlete activities from Strava",
+  "scripts": {
+    "test": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
+    "precommit": "lint-staged",
+    "prepublishOnly": "babel src --out-dir .",
+    "release": "np"
+  },
+  "main": "gatsby-node.js",
+  "repository": "https://github.com/danoc/gatsby-source-strava-activities",
+  "author": "Daniel O’Connor <daniel@danoc.me>",
+  "license": "MIT",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "node-fetch": "^2.1.1",
+    "query-string": "^6.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "np": "^2.20.1",
+    "prettier": "^1.11.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": ["prettier --write", "eslint --fix", "git add"],
+    "*.{css,scss,json,md}": ["prettier --write", "git add"]
+  }
+}
