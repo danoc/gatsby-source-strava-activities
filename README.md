@@ -1,4 +1,4 @@
-# `gatsby-source-strava-activities`
+# gatsby-source-strava-activities
 
 A Gatsby plugin that fetches athlete activities from Strava’s `/athlete/activities` endpoint. [Learn more about the endpoint](https://developers.strava.com/docs/reference/#api-Activities-getLoggedInAthleteActivities).
 
