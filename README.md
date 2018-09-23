@@ -2,6 +2,8 @@
 
 A Gatsby plugin that fetches athlete activities from Strava’s `/athlete/activities` endpoint. [Learn more about the endpoint](https://developers.strava.com/docs/reference/#api-Activities-getLoggedInAthleteActivities).
 
+This plugin requires Gatsby v2.
+
 ## Usage
 
 1.  Install `gatsby-source-strava-activities` in your project with `yarn add gatsby-source-strava-activities` or `npm install gatsby-source-strava-activities`.
