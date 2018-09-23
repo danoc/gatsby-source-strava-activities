@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-strava-activities",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0",
   "description": "Gatsby plugin that fetches athlete activities from Strava",
   "scripts": {
     "test": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
