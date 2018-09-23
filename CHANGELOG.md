@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2018-09-22
 
+### Changed
+
+- Use built-in `crypto` package instead of the one from NPM.
+
+## 1.0.0 - 2018-09-22
+
 ### Added
 
 - Add support for Gatsby v2.
