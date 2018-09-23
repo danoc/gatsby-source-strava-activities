@@ -1,10 +1,9 @@
 {
   "name": "gatsby-source-strava-activities",
-  "version": "0.1.1",
+  "version": "1.0.0-beta.0",
   "description": "Gatsby plugin that fetches athlete activities from Strava",
   "scripts": {
     "test": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
-    "precommit": "lint-staged",
     "prepublishOnly": "babel src --out-dir .",
     "release": "git checkout master && git pull && yarn test && yarn publish && git push --follow-tags"
   },
@@ -18,8 +17,9 @@
     "query-string": "^6.1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.1.0",
@@ -38,5 +38,10 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
