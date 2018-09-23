@@ -12,7 +12,6 @@
   "author": "Daniel O’Connor <daniel@danoc.me>",
   "license": "MIT",
   "dependencies": {
-    "crypto": "^1.0.1",
     "node-fetch": "^2.2.0",
     "query-string": "^6.1.0"
   },
