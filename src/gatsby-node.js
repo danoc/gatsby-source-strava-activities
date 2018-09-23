@@ -1,16 +1,15 @@
-const fetch = require('node-fetch');
-const crypto = require('crypto');
-const queryString = require('query-string');
+const fetch = require("node-fetch");
+const crypto = require("crypto");
+const queryString = require("query-string");
 
-exports.sourceNodes = async (
-  { boundActionCreators },
-  { authToken, before, after },
-) => {
+exports.sourceNodes = async ({ actions }, { authToken, before, after }) => {
   if (!authToken) {
-    throw new Error('You must provide an `authToken` to `gatsby-source-strava-activities`.');
+    throw new Error(
+      "You must provide an `authToken` to `gatsby-source-strava-activities`."
+    );
   }
 
-  const { createNode } = boundActionCreators;
+  const { createNode } = actions;
 
   const activities = [];
   let numResults = null;
@@ -21,7 +20,7 @@ exports.sourceNodes = async (
       after,
       before,
       page,
-      per_page: 30,
+      per_page: 30
     });
 
     // eslint-disable-next-line no-await-in-loop
@@ -29,9 +28,9 @@ exports.sourceNodes = async (
       `https://www.strava.com/api/v3/athlete/activities?${params}`,
       {
         headers: {
-          Authorization: `Bearer ${authToken}`,
-        },
-      },
+          Authorization: `Bearer ${authToken}`
+        }
+      }
     );
 
     // eslint-disable-next-line no-await-in-loop
@@ -40,26 +39,26 @@ exports.sourceNodes = async (
     numResults = data.length;
     page += 1;
 
-    data.forEach((d) => {
+    data.forEach(d => {
       activities.push(d);
     });
   } while (numResults > 0);
 
-  activities.forEach((activity) => {
+  activities.forEach(activity => {
     const jsonString = JSON.stringify(activity);
 
     const gatsbyNode = {
       activity: Object.assign({}, activity),
       id: `Strava Activity: ${activity.id}`,
-      parent: '__SOURCE__',
+      parent: "__SOURCE__",
       children: [],
       internal: {
-        type: 'StravaActivity',
+        type: "StravaActivity",
         contentDigest: crypto
-          .createHash('md5')
+          .createHash("md5")
           .update(jsonString)
-          .digest('hex'),
-      },
+          .digest("hex")
+      }
     };
 
     createNode(gatsbyNode);
