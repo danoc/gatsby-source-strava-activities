@@ -3,11 +3,13 @@
   "version": "1.0.1",
   "description": "Gatsby plugin that fetches athlete activities from Strava",
   "scripts": {
-    "test": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
-    "prepublishOnly": "babel src --out-dir .",
+    "test": "yarn test:eslint && yarn test:prettier",
+    "test:eslint": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
+    "test:prettier": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --list-different",
+    "prepublishOnly": "microbundle --entry src/gatsby-node.js --output gatsby-node.js --target node --format cjs",
+    "format": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --write",
     "release": "git checkout master && git pull && yarn test && yarn publish && git push --follow-tags"
   },
-  "main": "gatsby-node.js",
   "repository": "https://github.com/danoc/gatsby-source-strava-activities",
   "author": "Daniel O’Connor <daniel@danoc.me>",
   "license": "MIT",
@@ -16,31 +18,23 @@
     "query-string": "^6.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
-    "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.14.0",
     "husky": "^1.0.0-rc.15",
-    "lint-staged": "^7.3.0",
-    "prettier": "1.14.3"
+    "microbundle": "^0.11.0",
+    "prettier": "1.16.4",
+    "pretty-quick": "^1.10.0"
   },
   "keywords": [
     "gatsby",
     "strava",
     "gatsby-plugin"
   ],
-  "lint-staged": {
-    "*.{js,jsx,css,scss,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged"
     }
   }
 }
