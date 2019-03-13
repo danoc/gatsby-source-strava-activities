@@ -28,6 +28,9 @@
     "prettier": "1.16.4",
     "pretty-quick": "^1.10.0"
   },
+  "peerDependencies": {
+    "gatsby": "^2.0.0"
+  },
   "keywords": [
     "gatsby",
     "strava",
