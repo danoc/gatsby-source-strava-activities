@@ -3,13 +3,14 @@
   "version": "1.0.4",
   "description": "Gatsby plugin that fetches athlete activities from Strava",
   "files": [
-    "gatsby-node.js"
+    "gatsby-node.js",
+    "gatsby-node.js.map"
   ],
   "scripts": {
     "test": "yarn test:eslint && yarn test:prettier",
     "test:eslint": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
     "test:prettier": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --list-different",
-    "prepublishOnly": "babel src --out-dir .",
+    "prepublishOnly": "babel src --out-dir . --source-maps",
     "format": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --write",
     "release": "np"
   },
