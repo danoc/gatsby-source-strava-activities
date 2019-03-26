@@ -2,6 +2,9 @@
   "name": "gatsby-source-strava-activities",
   "version": "1.0.3",
   "description": "Gatsby plugin that fetches athlete activities from Strava",
+  "files": [
+    "gatsby-node.js"
+  ],
   "scripts": {
     "test": "yarn test:eslint && yarn test:prettier",
     "test:eslint": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
