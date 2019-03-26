@@ -6,7 +6,7 @@
     "test": "yarn test:eslint && yarn test:prettier",
     "test:eslint": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
     "test:prettier": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --list-different",
-    "prepublishOnly": "microbundle --entry src/gatsby-node.js --output gatsby-node.js --target node --format cjs",
+    "prepublishOnly": "babel src --out-dir .",
     "format": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --write",
     "release": "np"
   },
@@ -18,12 +18,14 @@
     "query-string": "^6.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.14.0",
     "husky": "^1.0.0-rc.15",
-    "microbundle": "^0.11.0",
     "np": "^4.0.2",
     "prettier": "1.16.4",
     "pretty-quick": "^1.10.0"
