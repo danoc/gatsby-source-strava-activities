@@ -3,6 +3,8 @@
   "version": "1.0.5",
   "description": "Gatsby plugin that fetches athlete activities from Strava",
   "files": [
+    "index.js",
+    "index.js.map",
     "gatsby-node.js",
     "gatsby-node.js.map"
   ],
