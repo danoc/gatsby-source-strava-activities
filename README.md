@@ -19,12 +19,17 @@ Then add the plugin to your `gatsby-config.js` file:
 {
   resolve: "gatsby-source-strava-activities",
   options: {
-    // This is the "Access Token" from:
-    // https://www.strava.com/settings/api
-    authToken: '',
-    // [Optional] An epoch timestamp to use for filtering activities that have taken place after a certain time.
+    // `getRefreshToken` must look up and return the refresh token as a string.
+    getRefreshToken: async () => {},
+    // `onRefreshTokenChanged` runs each time the access token expired and
+    // needed to be refreshed. It receives the new refresh token which must be
+    // stored. It will be needed again next time the token expires.
+    onRefreshTokenChanged: async (newRefreshToken) => {},
+    // [Optional] An epoch timestamp to use for filtering activities that have
+    // taken place after a certain time.
     after: '',
-    // An epoch timestamp to use for filtering activities that have taken place before a certain time.
+    // An epoch timestamp to use for filtering activities that have taken place
+    // before a certain time.
     before: '',
   }
 }
