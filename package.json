@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-strava-activities",
-  "version": "2.0.0-0",
+  "version": "2.0.0",
   "description": "Gatsby plugin that fetches athlete activities from Strava",
   "files": [
     "index.js",
