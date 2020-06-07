@@ -1,6 +1,6 @@
 # gatsby-source-strava-activities
 
-[![NPM version](https://badgen.net/npm/v/gatsby-source-strava-activities)](https://www.npmjs.com/package/gatsby-source-strava-activities) [![Build status](https://badgen.net/travis/danoc/gatsby-source-strava-activities)](https://travis-ci.com/danoc/gatsby-source-strava-activities)
+[![NPM version](https://badgen.net/npm/v/gatsby-source-strava-activities)](https://www.npmjs.com/package/gatsby-source-strava-activities) [![Test build status](https://github.com/danoc/gatsby-source-strava-activities/workflows/Test/badge.svg)](https://github.com/danoc/gatsby-source-strava-activities/actions?query=workflow%3ATest)
 
 A Gatsby plugin that fetches athlete activities from Strava’s `/athlete/activities` endpoint. [Learn more about the endpoint](https://developers.strava.com/docs/reference/#api-Activities-getLoggedInAthleteActivities).
 
