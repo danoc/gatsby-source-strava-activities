@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-strava-activities",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Gatsby plugin that fetches athlete activities from Strava",
   "files": [
     "index.js",
@@ -31,7 +31,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "prettier": "1.16.4",
+    "prettier": "^2.0.0",
     "pretty-quick": "^1.10.0"
   },
   "peerDependencies": {

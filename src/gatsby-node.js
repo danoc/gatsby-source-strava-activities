@@ -6,7 +6,7 @@ const getAuthToken = async ({
   clientId,
   clientSecret,
   getRefreshToken,
-  onRefreshTokenChanged
+  onRefreshTokenChanged,
 }) => {
   const refreshToken = await getRefreshToken();
 
@@ -14,13 +14,13 @@ const getAuthToken = async ({
     client_id: clientId,
     client_secret: clientSecret,
     grant_type: "refresh_token",
-    refresh_token: refreshToken
+    refresh_token: refreshToken,
   });
 
   const res = await fetch(
     `https://www.strava.com/api/v3/oauth/token?${params}`,
     {
-      method: "POST"
+      method: "POST",
     }
   );
 
@@ -43,7 +43,7 @@ exports.sourceNodes = async (
     getRefreshToken,
     before,
     after,
-    onRefreshTokenChanged
+    onRefreshTokenChanged,
   }
 ) => {
   if (!clientId) {
@@ -74,7 +74,7 @@ exports.sourceNodes = async (
     clientId,
     clientSecret,
     getRefreshToken,
-    onRefreshTokenChanged
+    onRefreshTokenChanged,
   });
 
   const { createNode } = actions;
@@ -88,7 +88,7 @@ exports.sourceNodes = async (
       after,
       before,
       page,
-      per_page: 30
+      per_page: 30,
     });
 
     // eslint-disable-next-line no-await-in-loop
@@ -96,8 +96,8 @@ exports.sourceNodes = async (
       `https://www.strava.com/api/v3/athlete/activities?${params}`,
       {
         headers: {
-          Authorization: `Bearer ${authToken}`
-        }
+          Authorization: `Bearer ${authToken}`,
+        },
       }
     );
 
@@ -107,12 +107,12 @@ exports.sourceNodes = async (
     numResults = data.length;
     page += 1;
 
-    data.forEach(d => {
+    data.forEach((d) => {
       activities.push(d);
     });
   } while (numResults > 0);
 
-  activities.forEach(activity => {
+  activities.forEach((activity) => {
     const jsonString = JSON.stringify(activity);
 
     const gatsbyNode = {
@@ -125,8 +125,8 @@ exports.sourceNodes = async (
         contentDigest: crypto
           .createHash("md5")
           .update(jsonString)
-          .digest("hex")
-      }
+          .digest("hex"),
+      },
     };
 
     createNode(gatsbyNode);
