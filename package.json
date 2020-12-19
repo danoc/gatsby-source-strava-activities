@@ -12,9 +12,8 @@
     "test": "yarn test:eslint && yarn test:prettier",
     "test:eslint": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
     "test:prettier": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --list-different",
-    "prepublishOnly": "babel src --out-dir . --source-maps",
     "format": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --write",
-    "release": "np"
+    "release": "yarn install --frozen-lockfile && yarn test && yarn babel src --out-dir . --source-maps && yarn changeset publish"
   },
   "repository": "https://github.com/danoc/gatsby-source-strava-activities",
   "author": "Daniel O’Connor <daniel@danoc.me>",
@@ -27,12 +26,12 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
+    "@changesets/cli": "^2.12.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.14.0",
     "husky": "^1.0.0-rc.15",
-    "np": "^6.2.3",
     "prettier": "1.16.4",
     "pretty-quick": "^1.10.0"
   },
