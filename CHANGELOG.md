@@ -1,5 +1,11 @@
 # gatsby-source-strava-activities
 
+## 3.0.0
+
+### Major Changes
+
+- 45064ee: Support Gatsby v3, removing support for Gatsby v2.
+
 ## 2.0.2
 
 ### Patch Changes
