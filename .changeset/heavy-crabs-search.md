@@ -1,5 +1,5 @@
 ---
-"gatsby-source-strava-activities": patch
+"gatsby-source-strava-activities": major
 ---
 
 Support Gatsby v3
