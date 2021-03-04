@@ -35,7 +35,7 @@
     "pretty-quick": "^1.10.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.0.0"
+    "gatsby": "^3.0.0"
   },
   "keywords": [
     "gatsby",
